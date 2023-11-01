@@ -1,15 +1,15 @@
           NO      imgs/wall1.xpm          
 
-                          SO imgs/wall2.xpm
+                          SO           imgs/wall2.xpm
 
    F 220,100,0
-                  C 225,30,0
+                  C 254,30,0
 
 
   WE imgs/wall3.xpm      
 
-   EA            imgs/wall4.xpm   
-
+   EA            imgs/wall4.xpm
+   
 
 
              11111

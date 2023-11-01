@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 21:36:40 by pferreir          #+#    #+#             */
-/*   Updated: 2023/11/01 02:05:54 by dsydelny         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:28:48 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct t_data
 	int		ea_here;
 	int		c_here;
 	int		f_here;
+	unsigned long		floor_color;
+	unsigned long		ceiling_color;
 	int		player_pos_x;
 	int		player_pos_y;
 	char	player_dir;

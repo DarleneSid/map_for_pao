@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 00:32:26 by dsydelny          #+#    #+#             */
-/*   Updated: 2023/11/01 00:32:50 by dsydelny         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:30:12 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	loop_floor(t_data *data, char *s, int i)
 			return (free_dstr(ithinkdifferent), -1);
 		count++;
 	}
+	data->floor_color = data->f_r << 16 | data->f_g << 8 | data->f_b;
 	free_dstr(ithinkdifferent);
 	return (1);
 }
@@ -90,6 +91,7 @@ int	loop_ceiling(t_data *data, char *s, int i)
 			return (free_dstr(ithink), -1);
 		cnt++;
 	}
+	data->ceiling_color = data->c_r << 16 | data->c_g << 8 | data->c_b;
 	free_dstr(ithink);
 	return (1);
 }

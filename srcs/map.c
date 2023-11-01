@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 00:21:29 by dsydelny          #+#    #+#             */
-/*   Updated: 2023/11/01 02:22:29 by dsydelny         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:29:12 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,37 @@ int	parsing(t_data *data, char *file)
 		free_good_map(data);
 		return (ft_printf("We have problems with borders!\n"), 1);
 	}
+	int k = 0;
+	while (k < data->height)
+	{
+		printf("%s", data->map[k]);
+		k++;
+	}
+	printf("\n\n\n\n\nMY MAP:\n");
+	k = 0;
+	while (k < data->h_map)
+	{
+		printf("%s", data->work_map[k]);
+		k++;
+	}
+	printf("\n\n\n%d\n", data->f_r);
+	printf("%d\n", data->f_g);
+	printf("%d\n", data->f_b);
+	printf("%d\n", data->c_r);
+	printf("%d\n", data->c_g);
+	printf("%d\n", data->c_b);
+	
+
+	printf("floor: %lu\n", data->floor_color);
+	printf("ceil: %lu\n", data->ceiling_color);
+
+	printf("my path no: [[%s]]\n", data->no_path);
+	printf("my path so: [[%s]]\n", data->so_path);
+	printf("my path we: [[%s]]\n", data->we_path);
+	printf("my path ea: [[%s]]\n", data->ea_path);
+	
+	printf("x [%d]\n", data->player_pos_x);
+	printf("y [%d]\n", data->player_pos_y);
+	printf(" dir [%c]\n", data->player_dir);
 	return (0);
 }
