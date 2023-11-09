@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pferreir <pferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 00:19:45 by dsydelny          #+#    #+#             */
-/*   Updated: 2023/10/31 23:37:25 by dsydelny         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:17:26 by pferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	size_map(t_data *data)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	data->nbcol = 0;
+	while (i < data->h_map)
+	{
+		j = ft_strlen(data->work_map[i]);
+		if (j >= data->nbcol)
+			data->nbcol = j - 1;
+		i++;
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -23,6 +40,11 @@ int	main(int ac, char **av)
 		return (ft_printf("It has to end with .cub!\n"), 1);
 	if (parsing(&data, av[1]))
 		return (1);
-	free_good_map(&data);
+	size_map(&data);
+	init_game(&data);
+	castallrays(&((&data)->p), &data);
+	key_handler(&data);
+	mlx_loop_hook(data.mlx, render, &data);
+	mlx_loop(data.mlx);
 	return (0);
 }

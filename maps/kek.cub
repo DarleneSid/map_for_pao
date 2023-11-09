@@ -2,8 +2,8 @@
 
                           SO           imgs/wall2.xpm
 
-   F 220,100,0
-                  C 254,30,0
+   F 150,50,100
+                  C 250,150,200
 
 
   WE imgs/wall3.xpm      
